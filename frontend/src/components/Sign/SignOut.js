@@ -1,6 +1,6 @@
 import React from 'react';
 import './SignButtons.css';
-import { UserAuth } from '../context/AuthContext';
+import { UserAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 const SignOut = () => {

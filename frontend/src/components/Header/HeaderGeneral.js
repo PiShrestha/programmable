@@ -1,8 +1,8 @@
 import React from 'react';
-import SignIn from './SignIn';
-import { UserAuth } from '../context/AuthContext';
+import SignIn from '../Sign/SignIn';
+import { UserAuth } from '../../context/AuthContext';
 import './Header.css';
-import SignOut from './SignOut';
+import SignOut from '../Sign/SignOut';
 
 const HeaderGeneral = ({text}) => {
     const { user } = UserAuth();
