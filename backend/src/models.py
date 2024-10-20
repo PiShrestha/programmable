@@ -1,32 +1,60 @@
-# Defines the user and question models for the database
+from src.firebase import db  # Reuse the same Firestore client
+from datetime import datetime
 
-from flask_sqlalchemy import SQLAlchemy
+class User:
+    """Class to represent a user in Firestore."""
 
-db = SQLAlchemy()  # Initialize SQLAlchemy
+    @staticmethod
+    def create_user(user_id, username):
+        user_data = {
+            'username': username,
+            'streak': 0,
+            'daily_progress': 0,
+            'last_streak_update': None
+        }
+        db.collection('users').document(user_id).set(user_data)
 
-class User(db.Model):
-    """Model to represent a user in the system."""
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    learning_history = db.relationship('LearningHistory', backref='user', lazy=True)
-    streak = db.Column(db.Integer, default=0)  # Track user's streak
-    daily_progress = db.Column(db.Integer, default=0)  # Track daily progress as an integer (0-100)
-    last_streak_update = db.Column(db.DateTime)  # Track last date when the streak was updated
+    @staticmethod
+    def get_user(user_id):
+        user_ref = db.collection('users').document(user_id).get()
+        return user_ref.to_dict() if user_ref.exists else None
 
-class Question(db.Model):
-    """Model to represent a question."""
-    id = db.Column(db.Integer, primary_key=True)
-    topic = db.Column(db.String(100), nullable=False)  # Main topic of the question
-    subtopic = db.Column(db.String(100), nullable=False)  # Subtopic of the question
-    difficulty = db.Column(db.Integer, nullable=False)  # Difficulty: 1 (Easy), 2 (Medium), 3 (Hard)
-    question_text = db.Column(db.String(200), nullable=False)  # Question content
-    choices = db.Column(db.JSON, nullable=False)  # Multiple choices
-    answer = db.Column(db.String(100), nullable=False)  # Correct answer
 
-class LearningHistory(db.Model):
-    """Model to track user's learning history with questions."""
-    id = db.Column(db.Integer, primary_key=True)  # Primary key for the learning history entry
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)  # Foreign key to User
-    question_id = db.Column(db.Integer, db.ForeignKey('question.id'), nullable=False)  # Foreign key to Question
-    correct = db.Column(db.Boolean, nullable=False)  # Track if the answer was correct
-    attempt_date = db.Column(db.DateTime)  # Date and time of the attempt
+class Question:
+    """Class to represent a question in Firestore."""
+
+    @staticmethod
+    def add_question(question_id, topic, subtopic, difficulty, question_text, choices, answer):
+        question_data = {
+            'topic': topic,
+            'subtopic': subtopic,
+            'difficulty': difficulty,
+            'question_text': question_text,
+            'choices': choices,
+            'answer': answer
+        }
+        db.collection('questions').document(question_id).set(question_data)
+
+    @staticmethod
+    def get_questions_by_topic(topic):
+        questions = db.collection('questions').where('topic', '==', topic).stream()
+        return [q.to_dict() for q in questions]
+
+
+class LearningHistory:
+    """Class to track user learning history in Firestore."""
+
+    @staticmethod
+    def add_history_entry(user_id, question_id, correct):
+        history_data = {
+            'user_id': user_id,
+            'question_id': question_id,
+            'correct': correct,
+            'attempt_date': datetime.now()
+        }
+        db.collection('learning_history').add(history_data)
+
+    @staticmethod
+    def get_history_by_user(user_id):
+        history = db.collection('learning_history').where('user_id', '==', user_id).stream()
+        return [h.to_dict() for h in history]
