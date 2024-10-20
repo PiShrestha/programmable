@@ -4,9 +4,9 @@ import Header from '../../components/Header/Header';
 import Start from '../components/Start';
 
 // Import images
-import jonathanImage from '../assets/images/jonathan.jpeg';
-import kyleImage from '../assets/images/blank.webp';
-import pratikImage from '../assets/images/pratik.jpeg';
+import jonathanImage from '../../assets/images/jonathan.jpeg';
+import kyleImage from '../../assets/images/blank.webp';
+import pratikImage from '../../assets/images/pratik.jpeg';
 
 const LandingPage = () => {
     return (
