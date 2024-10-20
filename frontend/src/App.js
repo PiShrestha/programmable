@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/LandingPage/LandingPage';
 import HomePage from './pages/HomePage/HomePage';
-// import JavaFoundationsPage from './pages/JavaFoundationsPage';
+import JavaFoundationsPage from './pages/JavaFoundation/JavaFoundationsPage';
 import { AuthContextProvider } from './context/AuthContext';
 import Protected from './components/Protected/Protected';
 
@@ -20,7 +20,7 @@ function App() {
             {/* Wrap home with protected to prevent null user access */}
             <Route path="/home" element={<Protected><HomePage /></Protected>} />
             {/* Protected route for Java Foundations topic */}
-            {/* <Route path="/topics/java-foundations" element={<Protected><JavaFoundationsPage /></Protected>} /> */}
+            <Route path="/topics/java-foundations" element={<Protected><JavaFoundationsPage /></Protected>} />
           </Routes>
         </Router>
       </div>

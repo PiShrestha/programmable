@@ -1,0 +1,392 @@
+[
+    {
+        "questionText": "Which of the following is a valid main method signature in Java?",
+        "choices": [
+            "public static void main(String[] args)",
+            "void main(String[] args)",
+            "public void main(String[] args)",
+            "static void main(String[] args)"
+        ],
+        "answer": "public static void main(String[] args)",
+        "subtopic": "Methods",
+        "topic": "Java Basics",
+        "difficulty": 1
+    },
+    {
+        "questionText": "What is the output of the following code? System.out.println(5 + \"3\");",
+        "choices": [
+            "53",
+            "8",
+            "Error",
+            "\"53\""
+        ],
+        "answer": "\"53\"",
+        "subtopic": "Operators",
+        "topic": "Java Basics",
+        "difficulty": 2
+    },
+    {
+        "questionText": "Which of the following is not a valid data type in Java?",
+        "choices": [
+            "int",
+            "String",
+            "boolean",
+            "decimal"
+        ],
+        "answer": "decimal",
+        "subtopic": "Variables",
+        "topic": "Java Basics",
+        "difficulty": 3
+    },
+    {
+        "questionText": "What keyword is used to create an object in Java?",
+        "choices": [
+            "new",
+            "create",
+            "instance",
+            "object"
+        ],
+        "answer": "new",
+        "subtopic": "Objects and Classes",
+        "topic": "Java OOP",
+        "difficulty": 1
+    },
+    {
+        "questionText": "What is the correct way to declare an array in Java?",
+        "choices": [
+            "int[] arr = new int[5];",
+            "int arr[] = 5;",
+            "int arr = new int(5);",
+            "array int arr[5];"
+        ],
+        "answer": "int[] arr = new int[5];",
+        "subtopic": "Arrays",
+        "topic": "Data Structures",
+        "difficulty": 2
+    },
+    {
+        "questionText": "Which of the following is not a Java access modifier?",
+        "choices": [
+            "private",
+            "public",
+            "protected",
+            "internal"
+        ],
+        "answer": "internal",
+        "subtopic": "Access Modifiers",
+        "topic": "Java OOP",
+        "difficulty": 3
+    },
+    {
+        "questionText": "Which operator is used to compare two values in Java?",
+        "choices": [
+            "==",
+            "=",
+            "!=",
+            "<>"
+        ],
+        "answer": "==",
+        "subtopic": "Operators",
+        "topic": "Java Basics",
+        "difficulty": 1
+    },
+    {
+        "questionText": "How do you define a constant in Java?",
+        "choices": [
+            "use 'final' keyword",
+            "use 'const' keyword",
+            "use 'static' keyword",
+            "use 'immutable' keyword"
+        ],
+        "answer": "use 'final' keyword",
+        "subtopic": "Constants",
+        "topic": "Java Basics",
+        "difficulty": 2
+    },
+    {
+        "questionText": "Which of the following loops executes at least once?",
+        "choices": [
+            "do-while",
+            "for",
+            "while",
+            "foreach"
+        ],
+        "answer": "do-while",
+        "subtopic": "Loops",
+        "topic": "Control Flow",
+        "difficulty": 3
+    },
+    {
+        "questionText": "How do you handle exceptions in Java?",
+        "choices": [
+            "try-catch",
+            "throw-catch",
+            "handle-exception",
+            "catch-error"
+        ],
+        "answer": "try-catch",
+        "subtopic": "Exception Handling",
+        "topic": "Java Basics",
+        "difficulty": 1
+    },
+    {
+        "questionText": "Which of the following is a valid main method signature in Java?",
+        "choices": [
+            "public static void main(String[] args)",
+            "void main(String[] args)",
+            "public void main(String[] args)",
+            "static void main(String[] args)"
+        ],
+        "answer": "public static void main(String[] args)",
+        "subtopic": "Methods",
+        "topic": "Java Basics",
+        "difficulty": 2
+    },
+    {
+        "questionText": "What is the output of the following code? System.out.println(5 + \"3\");",
+        "choices": [
+            "53",
+            "8",
+            "Error",
+            "\"53\""
+        ],
+        "answer": "\"53\"",
+        "subtopic": "Operators",
+        "topic": "Java Basics",
+        "difficulty": 3
+    },
+    {
+        "questionText": "Which of the following is not a valid data type in Java?",
+        "choices": [
+            "int",
+            "String",
+            "boolean",
+            "decimal"
+        ],
+        "answer": "decimal",
+        "subtopic": "Variables",
+        "topic": "Java Basics",
+        "difficulty": 1
+    },
+    {
+        "questionText": "What keyword is used to create an object in Java?",
+        "choices": [
+            "new",
+            "create",
+            "instance",
+            "object"
+        ],
+        "answer": "new",
+        "subtopic": "Objects and Classes",
+        "topic": "Java OOP",
+        "difficulty": 2
+    },
+    {
+        "questionText": "What is the correct way to declare an array in Java?",
+        "choices": [
+            "int[] arr = new int[5];",
+            "int arr[] = 5;",
+            "int arr = new int(5);",
+            "array int arr[5];"
+        ],
+        "answer": "int[] arr = new int[5];",
+        "subtopic": "Arrays",
+        "topic": "Data Structures",
+        "difficulty": 3
+    },
+    {
+        "questionText": "Which of the following is not a Java access modifier?",
+        "choices": [
+            "private",
+            "public",
+            "protected",
+            "internal"
+        ],
+        "answer": "internal",
+        "subtopic": "Access Modifiers",
+        "topic": "Java OOP",
+        "difficulty": 1
+    },
+    {
+        "questionText": "Which operator is used to compare two values in Java?",
+        "choices": [
+            "==",
+            "=",
+            "!=",
+            "<>"
+        ],
+        "answer": "==",
+        "subtopic": "Operators",
+        "topic": "Java Basics",
+        "difficulty": 2
+    },
+    {
+        "questionText": "How do you define a constant in Java?",
+        "choices": [
+            "use 'final' keyword",
+            "use 'const' keyword",
+            "use 'static' keyword",
+            "use 'immutable' keyword"
+        ],
+        "answer": "use 'final' keyword",
+        "subtopic": "Constants",
+        "topic": "Java Basics",
+        "difficulty": 3
+    },
+    {
+        "questionText": "Which of the following loops executes at least once?",
+        "choices": [
+            "do-while",
+            "for",
+            "while",
+            "foreach"
+        ],
+        "answer": "do-while",
+        "subtopic": "Loops",
+        "topic": "Control Flow",
+        "difficulty": 1
+    },
+    {
+        "questionText": "How do you handle exceptions in Java?",
+        "choices": [
+            "try-catch",
+            "throw-catch",
+            "handle-exception",
+            "catch-error"
+        ],
+        "answer": "try-catch",
+        "subtopic": "Exception Handling",
+        "topic": "Java Basics",
+        "difficulty": 2
+    },
+    {
+        "questionText": "Which of the following is a valid main method signature in Java?",
+        "choices": [
+            "public static void main(String[] args)",
+            "void main(String[] args)",
+            "public void main(String[] args)",
+            "static void main(String[] args)"
+        ],
+        "answer": "public static void main(String[] args)",
+        "subtopic": "Methods",
+        "topic": "Java Basics",
+        "difficulty": 3
+    },
+    {
+        "questionText": "What is the output of the following code? System.out.println(5 + \"3\");",
+        "choices": [
+            "53",
+            "8",
+            "Error",
+            "\"53\""
+        ],
+        "answer": "\"53\"",
+        "subtopic": "Operators",
+        "topic": "Java Basics",
+        "difficulty": 1
+    },
+    {
+        "questionText": "Which of the following is not a valid data type in Java?",
+        "choices": [
+            "int",
+            "String",
+            "boolean",
+            "decimal"
+        ],
+        "answer": "decimal",
+        "subtopic": "Variables",
+        "topic": "Java Basics",
+        "difficulty": 2
+    },
+    {
+        "questionText": "What keyword is used to create an object in Java?",
+        "choices": [
+            "new",
+            "create",
+            "instance",
+            "object"
+        ],
+        "answer": "new",
+        "subtopic": "Objects and Classes",
+        "topic": "Java OOP",
+        "difficulty": 3
+    },
+    {
+        "questionText": "What is the correct way to declare an array in Java?",
+        "choices": [
+            "int[] arr = new int[5];",
+            "int arr[] = 5;",
+            "int arr = new int(5);",
+            "array int arr[5];"
+        ],
+        "answer": "int[] arr = new int[5];",
+        "subtopic": "Arrays",
+        "topic": "Data Structures",
+        "difficulty": 1
+    },
+    {
+        "questionText": "Which of the following is not a Java access modifier?",
+        "choices": [
+            "private",
+            "public",
+            "protected",
+            "internal"
+        ],
+        "answer": "internal",
+        "subtopic": "Access Modifiers",
+        "topic": "Java OOP",
+        "difficulty": 2
+    },
+    {
+        "questionText": "Which operator is used to compare two values in Java?",
+        "choices": [
+            "==",
+            "=",
+            "!=",
+            "<>"
+        ],
+        "answer": "==",
+        "subtopic": "Operators",
+        "topic": "Java Basics",
+        "difficulty": 3
+    },
+    {
+        "questionText": "How do you define a constant in Java?",
+        "choices": [
+            "use 'final' keyword",
+            "use 'const' keyword",
+            "use 'static' keyword",
+            "use 'immutable' keyword"
+        ],
+        "answer": "use 'final' keyword",
+        "subtopic": "Constants",
+        "topic": "Java Basics",
+        "difficulty": 1
+    },
+    {
+        "questionText": "Which of the following loops executes at least once?",
+        "choices": [
+            "do-while",
+            "for",
+            "while",
+            "foreach"
+        ],
+        "answer": "do-while",
+        "subtopic": "Loops",
+        "topic": "Control Flow",
+        "difficulty": 2
+    },
+    {
+        "questionText": "How do you handle exceptions in Java?",
+        "choices": [
+            "try-catch",
+            "throw-catch",
+            "handle-exception",
+            "catch-error"
+        ],
+        "answer": "try-catch",
+        "subtopic": "Exception Handling",
+        "topic": "Java Basics",
+        "difficulty": 3
+    }
+]
