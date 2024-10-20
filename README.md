@@ -15,7 +15,7 @@ This project is a web app designed for aspiring Computer Science students to pra
 
 ## ⚠️ Notice
 
-The serverAccountKey from Firebase is private. It must be securely configured in config/serviceAccountKey.json. Make sure this file is properly set up before running the project to ensure backend functionality.
+The serverAccountKey from Firebase is private. It must be securely configured in config/serviceAccountKey.json. Make sure this file is properly set up before running the project to ensure backend functionality. Also you will need to set up the questions by running `upload.mjs`.
 
 ## Technologies Used
 
