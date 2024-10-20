@@ -1,0 +1,23 @@
+.auth-buttons {
+    display: flex;
+}
+
+.auth-buttons button {
+    font-family: "Consolas";
+    font-size: x-large;
+    margin-left: 4rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sign-in-or-out {
+    background-color: #1db954;
+    color: white;
+}
+
+.sign-in-or-out:hover {
+    opacity: 0.8;
+}
