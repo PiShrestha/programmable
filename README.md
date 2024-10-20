@@ -13,6 +13,9 @@ This project is a web app designed for aspiring Computer Science students to pra
 - [License](#license)
 - [Future Features](#future-features)
 
+## ⚠️ Notice
+
+The serverAccountKey from Firebase is private. It must be securely configured in config/serviceAccountKey.json. Make sure this file is properly set up before running the project to ensure backend functionality.
 
 ## Technologies Used
 
@@ -55,7 +58,7 @@ To run the project locally, follow these steps:
 1. **Start the Flask Backend**:
    From the backend directory of the project, run:
    ```bash
-   python app.py
+   python run.py
    ```
    This will start the Flask server, typically at `http://localhost:5000`.
 
