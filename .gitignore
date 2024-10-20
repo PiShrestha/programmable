@@ -149,4 +149,4 @@ venv.bak/
 node_modules
 __pycache__/
 __pycache__
-config/serviceAccountKey.json
+config/serviceAccountKey.json:1
