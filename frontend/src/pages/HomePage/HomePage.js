@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../../components/Header/HeaderGeneral';
 import CategoryCard from '../../components/CategoryCard/CategoryCard';
-import StreakBar from '../../components/StreakBar/StreakBar';
 import javaImage from '../../assets/images/java.png';
 import pythonImage from '../../assets/images/python.png';
 import sqlImage from '../../assets/images/mySQL.png';
@@ -9,6 +8,7 @@ import dsaImage from '../../assets/images/dsa.png';
 import jsImage from '../../assets/images/javascript.png';
 import cppImage from '../../assets/images/cpp.png';
 import { UserAuth } from '../../context/AuthContext';
+import UserProfile from '../../components/UserProfile/UserProfile';
 import './HomePage.css';
 
 const HomePage = () => {
@@ -26,7 +26,7 @@ const HomePage = () => {
     return (
         <div className="home-page">
             <Header text={"Welcome back, " + user.displayName + "👋"}/>
-            <StreakBar />
+            <UserProfile />
             <div className="category-container">
                 {categories.map((category, index) => (
                     <CategoryCard

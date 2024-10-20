@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { UserAuth } from '../context/AuthContext';
-import ProgressBar from '../components/ProgressBar';
-import DailyStreak from '../components/DailyStreak';
-import { fetchUserData } from '../utils/fetchUserData';
+import { UserAuth } from '../../context/AuthContext';
+import ProgressBar from '../ProgressBar/ProgressBar';
+import DailyStreak from '../DailyStreak/DailyStreak';
+import { fetchUserData } from '../../utils/fetchUserData';
 import './UserProfile.css';
 
 const UserProfile = () => {
