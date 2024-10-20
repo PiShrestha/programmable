@@ -1,0 +1,32 @@
+.question-card {
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  } 
+
+  .option {
+    list-style: none;
+    text-align: left;
+    padding: 5px;
+  }
