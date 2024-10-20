@@ -1,7 +1,12 @@
 import React from 'react';
+import SignIn from './../Sign/SignIn';
+import { UserAuth } from './../../context/AuthContext';
 import './Header.css';
+import SignOut from './../Sign/SignOut';
 
 const Header = () => {
+    const { user } = UserAuth();
+
     return (
         <div>
             <header>
@@ -13,8 +18,11 @@ const Header = () => {
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                     <div className="auth-buttons">
-                        <button>Sign Out</button>
-                        <button>Sign In</button>
+                        {user?.displayName ? (
+                            <SignOut />
+                        ) : (
+                            <SignIn />
+                        )}
                     </div>
                 </nav>
             </header>
