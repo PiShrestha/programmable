@@ -1,4 +1,4 @@
-from src.firebase import db  # Reuse the same Firestore client
+from src.firebase import db 
 from datetime import datetime
 
 class User:
@@ -42,19 +42,21 @@ class Question:
 
 
 class LearningHistory:
-    """Class to track user learning history in Firestore."""
+    """Manage individual user learning history in Firestore."""
 
     @staticmethod
     def add_history_entry(user_id, question_id, correct):
-        history_data = {
-            'user_id': user_id,
+        """Add a new entry to the user's learning history."""
+        entry = {
             'question_id': question_id,
             'correct': correct,
             'attempt_date': datetime.now()
         }
-        db.collection('learning_history').add(history_data)
+        # Add entry to the user's 'learning_history' subcollection
+        db.collection('users').document(user_id).collection('learning_history').add(entry)
 
     @staticmethod
     def get_history_by_user(user_id):
-        history = db.collection('learning_history').where('user_id', '==', user_id).stream()
-        return [h.to_dict() for h in history]
+        """Retrieve all learning history entries for a specific user."""
+        history_ref = db.collection('users').document(user_id).collection('learning_history').stream()
+        return [h.to_dict() for h in history_ref]

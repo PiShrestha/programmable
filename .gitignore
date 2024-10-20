@@ -144,3 +144,9 @@ venv.bak/
 # Python environments
 .env
 .venv
+
+#backend stuff
+node_modules
+__pycache__/
+__pycache__
+config/serviceAccountKey.json
