@@ -1,11 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { collection, getDocs, updateDoc } from 'firebase/firestore';
+import { db } from '../../firebase';
 import Header from '../../components/Header/HeaderGeneral';
 import QuestionCard from '../../components/QuestionCard/QuestionCard';
-import questionsData from '../../data/java_fundamentals.json';
 import { useNavigate } from 'react-router-dom';
+import { UserAuth } from '../../context/AuthContext';
+import { fetchUserData } from '../../utils/fetchUserData';
+import { doc } from 'firebase/firestore';
 import './JavaFoundationsPage.css';
 
 const JavaFoundationsPage = () => {
+    const { user } = UserAuth();
+    const userId = user ? user.uid : null;
+    const [questions, setQuestions] = useState([]);
     // keep track of which question user is on
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     // answer currently chosen
@@ -14,29 +21,64 @@ const JavaFoundationsPage = () => {
     const [isCorrect, setIsCorrect] = useState(false);
     // feedback whether user is right or not
     const [showFeedback, setShowFeedback] = useState(false);
-    // routing
+    const [correctQuestionsToday, setCorrectQuestionsToday] = useState(0);
     const navigate = useNavigate();
 
-    const currentQuestion = questionsData.questions[currentQuestionIndex];
+    // get questions and user's current correctQuestionsToday
+    useEffect(() => {
+        if (!userId) {
+            console.error('User ID is undefined');
+            return;
+        }
+
+        const fetchQuestionsAndUserData = async () => {
+            // get the questions
+            const querySnapshot = await getDocs(collection(db, 'questions'));
+            // filter relevant document data
+            const questionsList = querySnapshot.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+            setQuestions(questionsList);
+
+            // use fetchUserData
+            const userData = await fetchUserData(userId);
+            if (userData) {
+                setCorrectQuestionsToday(userData.correctQuestionsToday);
+            }
+        };
+
+        fetchQuestionsAndUserData();
+    }, [userId]);
 
     // update answer
     const handleAnswerSelection = (answer) => {
         setSelectedAnswer(answer);
     };
 
-    // compare answer with correct one and update feedback message
-    const handleSubmit = () => {
+    // increment correctQuestionsToday if answer is correct
+    const handleSubmit = async () => {
         if (selectedAnswer) {
-            const correctAnswer = currentQuestion.correctAnswer;
-            setIsCorrect(selectedAnswer === correctAnswer);
+            const correctAnswer = questions[currentQuestionIndex].answer;
+            const isAnswerCorrect = selectedAnswer === correctAnswer;
+            setIsCorrect(isAnswerCorrect);
             setShowFeedback(true);
+
+            // if the answer is correct and correctQuestionsToday < 10, increment it
+            if (isAnswerCorrect && correctQuestionsToday < 10) {
+                const userRef = doc(db, 'users', userId);
+                await updateDoc(userRef, {
+                    correctQuestionsToday: correctQuestionsToday + 1
+                });
+                setCorrectQuestionsToday(prev => prev + 1);
+            }
         }
     };
 
     // hides feedback, shifts to next question, and if at last question, send user back home
     const handleContinue = () => {
         setShowFeedback(false);
-        if (currentQuestionIndex < questionsData.questions.length - 1) {
+        if (currentQuestionIndex < questions.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
         } else {
             navigate('/home');
@@ -47,6 +89,19 @@ const JavaFoundationsPage = () => {
     const handleExitClick = () => {
         navigate('/home');
     };
+
+    // show loading until questions are fetched
+    if (questions.length === 0) {
+        return <div>Loading...</div>;
+    }
+
+    // get current question based on index
+    const currentQuestion = questions[currentQuestionIndex];
+
+    // show loading until questions are fetched
+    if (questions.length === 0 || !currentQuestion) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className="questions-page">
@@ -65,11 +120,10 @@ const JavaFoundationsPage = () => {
                     <button className="check-button" onClick={handleSubmit}>
                         Check
                     </button>
-
-                    {/* shows up when question is checked, conditional response */}
+                    {/* Shows up when question is checked, conditional response */}
                     {showFeedback && (
                         <div className={`feedback ${showFeedback ? 'slide-up' : ''}`}>
-                            <p>{isCorrect ? "Correct! 🎉" : `Wrong! The correct answer is: ${currentQuestion.correctAnswer}`}</p>
+                            <p>{isCorrect ? "Correct! 🎉" : `Wrong! The correct answer is: ${currentQuestion.answer}`}</p>
                             <button className="continue-button" onClick={handleContinue}>
                                 Continue
                             </button>

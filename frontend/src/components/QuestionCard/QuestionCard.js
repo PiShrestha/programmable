@@ -4,18 +4,18 @@ import './QuestionCard.css';
 const QuestionCard = ({ questionData, onAnswerSelection }) => {
     return (
         <div className="question-card">
-            <h3>{questionData.question}</h3>
+            <h3>{questionData.questionText}</h3>
             <ul className="options-list">
-                {Object.entries(questionData.options).map(([key, value]) => (
-                    <li key={key} className="option">
+                {questionData.choices.map((choice, index) => (
+                    <li key={index} className="option">
                         <label>
                             <input 
                                 type="radio" 
                                 name={`question-${questionData.id}`} 
-                                value={key} 
-                                onChange={() => onAnswerSelection(key)}
+                                value={choice} 
+                                onChange={() => onAnswerSelection(choice)}
                             />
-                            {`${key}: ${value}`}
+                            {choice}
                         </label>
                     </li>
                 ))}
