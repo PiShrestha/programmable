@@ -1,0 +1,115 @@
+{
+    "questions" : [
+        {
+          "id": 1,
+          "question": "Which of the following is the correct way to print 'Hello, World!' in Java?",
+          "options": {
+            "A": "print('Hello, World!')",
+            "B": "System.out.println('Hello, World!');",
+            "C": "Console.log('Hello, World!');",
+            "D": "echo 'Hello, World!';"
+          },
+          "correctAnswer": "B"
+        },
+        {
+          "id": 2,
+          "question": "Which data type is used to store whole numbers in Java?",
+          "options": {
+            "A": "float",
+            "B": "String",
+            "C": "int",
+            "D": "boolean"
+          },
+          "correctAnswer": "C"
+        },
+        {
+          "id": 3,
+          "question": "What is the correct syntax to declare a variable in Java?",
+          "options": {
+            "A": "int 5x = 10;",
+            "B": "int x = 10;",
+            "C": "x int = 10;",
+            "D": "int = 10;"
+          },
+          "correctAnswer": "B"
+        },
+        {
+          "id": 4,
+          "question": "How do you take input from the user in Java?",
+          "options": {
+            "A": "Scanner input = new Scanner(System.in);",
+            "B": "Console.read();",
+            "C": "System.getInput();",
+            "D": "Scanner scan = new Scanner();"
+          },
+          "correctAnswer": "A"
+        },
+        {
+          "id": 5,
+          "question": "What does 'public static void main(String[] args)' signify in Java?",
+          "options": {
+            "A": "It is the main method where program execution begins.",
+            "B": "It declares a new class.",
+            "C": "It prints output to the console.",
+            "D": "It initializes variables."
+          },
+          "correctAnswer": "A"
+        },
+        {
+          "id": 6,
+          "question": "Which keyword is used to create a new object in Java?",
+          "options": {
+            "A": "create",
+            "B": "make",
+            "C": "new",
+            "D": "object"
+          },
+          "correctAnswer": "C"
+        },
+        {
+          "id": 7,
+          "question": "Which of the following is the correct way to comment out a single line in Java?",
+          "options": {
+            "A": "/* This is a comment */",
+            "B": "// This is a comment",
+            "C": "# This is a comment",
+            "D": "<!-- This is a comment -->"
+          },
+          "correctAnswer": "B"
+        },
+        {
+          "id": 8,
+          "question": "Which data type is used to store text in Java?",
+          "options": {
+            "A": "String",
+            "B": "char",
+            "C": "text",
+            "D": "str"
+          },
+          "correctAnswer": "A"
+        },
+        {
+          "id": 9,
+          "question": "What is the correct syntax for an if statement in Java?",
+          "options": {
+            "A": "if x > 5 { }",
+            "B": "if (x > 5) { }",
+            "C": "if x > 5: { }",
+            "D": "if (x > 5): { }"
+          },
+          "correctAnswer": "B"
+        },
+        {
+          "id": 10,
+          "question": "How do you print the value of a variable 'x' in Java?",
+          "options": {
+            "A": "System.out.println(x);",
+            "B": "print(x);",
+            "C": "Console.print(x);",
+            "D": "echo x;"
+          },
+          "correctAnswer": "A"
+        }
+    ]
+}
+  
