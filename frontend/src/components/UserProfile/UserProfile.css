@@ -1,0 +1,13 @@
+.user-profile {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-content {
+    margin-top: 140px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
